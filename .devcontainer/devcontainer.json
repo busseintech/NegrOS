@@ -1,0 +1,21 @@
+{
+  "name": "OS Development Environment",
+  "image": "mcr.microsoft.com/vscode/devcontainers/cpp:0-ubuntu-20.04",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.remote-containers",
+        "ms-vscode.asm-code-lens"
+      ]
+    }
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "runArgs": [
+    "--init", "bash"
+  ],
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y nasm qemu gcc build-essential make"
+}
